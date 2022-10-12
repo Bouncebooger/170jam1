@@ -6,7 +6,11 @@ public class makeweb : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject wire;
-   // private GameObject[] LineRenderer; 
+    private bool[] webconnect = new bool[4] ;
+    private int webmade = 0;
+    private int baseconnect = 0;
+    private int webdistmax = 4;
+    private  LineRenderer[] amogus = new LineRenderer[4]; 
     private int webcount;
     private Vector3 addy;
     private LineRenderer webster;
@@ -14,35 +18,60 @@ public class makeweb : MonoBehaviour
     void Awake()
     {
 
-
+        
         addy = transform.position;
         Debug.Log("hello addy is " + addy);
     }
     void Start()
     {
+        
+        
         webster = GetComponent<LineRenderer>();
-
+        
         webcount = 0;
+        webspawn();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (webcount == 0)
-        {
-         
-            Vector3 point2 = new Vector3(-2f, 5, 10);
-            Vector3 baddy = addy;
-            baddy.x = addy.x+ (Random.Range(1,2));
-            baddy.y = addy.y+0.5f;
-            baddy.z = addy.z+0.5f;
+      
+    }
 
-            webster.positionCount = 2;
-            webster.SetPosition(0,baddy);
-            webster.SetPosition(1,point2);
-            // Instantiate(wire, baddy, Quaternion.identity);
-            webcount++;
-            Debug.Log("baddy is " + baddy);
+    void webspawn()
+    {
+        
+        if (baseconnect < webmade )
+        {
+            Debug.Log("Stop Posting about SPIDERS(1982)2");
+            return;
+        }
+        else 
+        {
+            if (webmade >= 4)
+            {
+                Debug.Log("alarm!");
+                return;
+            }
+            int weblim = Random.Range(1, (4 - webmade));
+            for(  int z = 0; z < weblim; z++)
+            {
+                LineRenderer newweb = GetComponent<LineRenderer>();
+                amogus[webmade] = newweb;
+                webmade++;
+                Debug.Log("Stop Posting about SPIDERS(1982)"+weblim);
+            } 
+            //make wires numbering in range (1-(4-baseconnect))
         }
     }
+    void webstep(LineRenderer orbweb)
+    {
+        if(orbweb.positionCount < webdistmax)
+        {
+            orbweb.positionCount++;
+      //      orbweb.SetPosition(orbweb.positionCount-1,)
+           //move towards base with wobble decreasing on every next point.
+        }
+    }
+
 }
