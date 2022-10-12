@@ -9,8 +9,10 @@ public class makenest : MonoBehaviour
 
     private void Awake()
     {
-        Vector3 randnewNest = new Vector3(Random.Range(-5, 5), Random.Range(-5, 5),0);
-        Instantiate(Nest, randnewNest,Quaternion.identity);
+        for (int x = 0; x < 2; x++) {
+            Vector3 randnewNest = new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), 0);
+            Instantiate(Nest, randnewNest, Quaternion.identity);
+        }
     }
     void Start()
     {
