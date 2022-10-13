@@ -6,6 +6,7 @@ public class shipControls : MonoBehaviour
 {
     Rigidbody2D rb;
     public float speed = 5.0f;
+    public float rotation = 0.30f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,8 @@ public class shipControls : MonoBehaviour
     void Update()
     {
         movePlayer();
+        checkShoot();
+        checkAngle();
         
     }
 
@@ -36,6 +39,7 @@ public class shipControls : MonoBehaviour
 
             transform.position = temp;
         }
+
         if (Input.GetAxisRaw("Horizontal") > 0f)
         {
             Vector3 temp = transform.position;
@@ -50,5 +54,34 @@ public class shipControls : MonoBehaviour
 
             transform.position = temp;
         }
+
+        if (Input.GetKey(KeyCode.Q))
+        {
+            Quaternion temp = transform.rotation;
+            temp.z = rotation;
+            transform.rotation = temp;
+        }
+        else if (Input.GetKey(KeyCode.E))
+        {
+            Quaternion temp = transform.rotation;
+            temp.z = -rotation;
+            transform.rotation = temp;
+        }
+        else
+        {
+            Quaternion temp = transform.rotation;
+            temp.z = 0;
+            transform.rotation = temp;
+        }
+    }
+
+    void checkShoot()
+    {
+        
+    }
+
+    void checkAngle()
+    {
+
     }
 }
