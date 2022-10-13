@@ -25,4 +25,9 @@ public class enemy : MonoBehaviour
             transform.position = tmp;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(this.gameObject);
+    }
 }
