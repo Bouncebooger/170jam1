@@ -49,8 +49,8 @@ public class crawl : MonoBehaviour
        
         if(spawned == 0)
         {
-              Instantiate(spread,startpoint , Quaternion.identity);
-            spawned++
+             //  Instantiate(spread,startpoint , Quaternion.identity);
+            spawned++;
         }
         
 
