@@ -24,7 +24,7 @@ public class baseObj : MonoBehaviour
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, i);
             //Debug.Log(hit.transform.tag);
-            if (hit.collider != null && hit.transform.tag == "EditorOnly" && hit.transform.gameObject.active == false) // if it's another base
+            if (hit.collider != null && hit.transform.tag == "EditorOnly" && hit.transform.gameObject.activeSelf == false) // if it's another base
             {
                 //float dist = Mathf.Abs(hit.point.y - transform.position.y);
                 LineRenderer lineRenderer = new GameObject("Line").AddComponent<LineRenderer>();
