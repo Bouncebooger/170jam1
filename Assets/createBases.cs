@@ -10,6 +10,7 @@ public class createBases : MonoBehaviour
     public float levelWidth = 3f;
     public float minY = .5f;
     public float maxY = .5f;
+    public GameObject playerRef;
     // Start is called before the first frame update
     void Start()
     {
