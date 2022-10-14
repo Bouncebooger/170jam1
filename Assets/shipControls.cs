@@ -7,6 +7,8 @@ public class shipControls : MonoBehaviour
     Rigidbody2D rb;
     public float speed = 5.0f;
     public float rotation = 0.30f;
+    public GameObject player_Bullet;
+    public Transform attack_Point;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +20,7 @@ public class shipControls : MonoBehaviour
     void Update()
     {
         movePlayer();
-        checkShoot();
+        shoot();
         checkAngle();
         
     }
@@ -75,9 +77,12 @@ public class shipControls : MonoBehaviour
         }
     }
 
-    void checkShoot()
+    void shoot()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(player_Bullet, attack_Point.position, Quaternion.identity);
+        }
     }
 
     void checkAngle()
