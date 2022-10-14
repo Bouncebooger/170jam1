@@ -5,7 +5,7 @@ using UnityEngine;
 public class bulletBehavior : MonoBehaviour
 {
     public float bulletSpeed = 5f;
-    public float activeTimer = 3f;
+    public float activeTimer = 5f;
     public Vector2 m_dir;
     private Rigidbody2D rb;
 
@@ -24,7 +24,7 @@ public class bulletBehavior : MonoBehaviour
         rb.velocity = m_dir * bulletSpeed;
         transform.position = temp;
 
-        Destroy(gameObject, 3);
+        Destroy(gameObject, activeTimer);
 
         //if hit enemy or edge of screen, disappear 
         //if hit mirror, bounce
