@@ -32,8 +32,20 @@ public class enemy : MonoBehaviour
         transform.position = tmp;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(this.gameObject);
+        if (collision.transform.tag == "EditorOnly")
+        {
+            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+            Debug.Log("ignore collision");
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        /*if (collision.transform.tag == "Finish")
+        {
+            Destroy(this.gameObject);
+        }*/
     }
 }

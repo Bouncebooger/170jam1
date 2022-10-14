@@ -32,7 +32,7 @@ public class createBases : MonoBehaviour
 
                 if (!rand.Contains(i * j + j)) // set other bases to inactive except for first one
                 {
-                    newBase.SetActive(false);
+                    newBase.gameObject.SetActive(false);
                 }
                 spawnPosition.x += 3;
             }

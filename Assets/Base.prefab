@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8461383279211495548}
   - component: {fileID: 638762353323063973}
   - component: {fileID: 2013415281157672184}
+  - component: {fileID: 3196690268496928840}
   m_Layer: 0
   m_Name: Base
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,3 +101,29 @@ MonoBehaviour:
   lengthOfLineRenderer: 20
   interpolationFramesCount: 45
   enemPrefab: {fileID: 4068914434463755511, guid: 7bd548bedde8f204da829e662115e2c0, type: 3}
+--- !u!61 &3196690268496928840
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4428619197528073092}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.015382886, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.8, y: 2.8}
+    newSize: {x: 2.8, y: 2.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0308292, y: 1.4770257}
+  m_EdgeRadius: 0

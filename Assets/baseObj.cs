@@ -23,14 +23,17 @@ public class baseObj : MonoBehaviour
         foreach (Vector2 i in directions)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, i);
-            if (hit.collider != null && hit.transform.gameObject.name == "Base")
+            //Debug.Log(hit.transform.tag);
+            if (hit.collider != null && hit.transform.tag == "EditorOnly" && hit.transform.gameObject.active == false) // if it's another base
             {
-                /*float dist = Mathf.Abs(hit.point.y - transform.position.y);
-                LineRenderer lineRenderer = GetComponent<LineRenderer>();*/
-                Vector3 target = hit.transform.position;
+                //float dist = Mathf.Abs(hit.point.y - transform.position.y);
+                LineRenderer lineRenderer = new GameObject("Line").AddComponent<LineRenderer>();
+                lineRenderer.startColor = Color.blue;
+                lineRenderer.endColor = Color.blue;
                 //lineRenderer.SetPosition(0, tar);
-                Debug.DrawLine(this.transform.position, target, Color.blue);
                 hit.transform.gameObject.SetActive(true);
+                lineRenderer.SetPosition(0, transform.position);
+                lineRenderer.SetPosition(1, hit.transform.position);
             }
         }
     }
