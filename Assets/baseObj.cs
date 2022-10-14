@@ -46,4 +46,6 @@ public class baseObj : MonoBehaviour
         GameObject enemy = Instantiate(enemPrefab, this.gameObject.transform.position, Quaternion.identity);
         enemy.GetComponent<enemy>().target = playerPosition;
     }
+
+   
 }
