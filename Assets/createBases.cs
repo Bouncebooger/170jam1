@@ -38,6 +38,7 @@ public class createBases : MonoBehaviour
             }
             spawnPosition.y += 3;
         }
+
     }
 
     // Update is called once per frame
