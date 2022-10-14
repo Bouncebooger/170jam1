@@ -6,6 +6,7 @@ public class baseObj : MonoBehaviour
 {
     Rigidbody2D rb2d;
     public int lengthOfLineRenderer = 20;
+    public int interpolationFramesCount = 45; // Number of frames to completely interpolate between the 2 positions
     // Start is called before the first frame update
     void Start()
     {
@@ -14,25 +15,24 @@ public class baseObj : MonoBehaviour
 
     void FixedUpdate()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up);
-        if (hit.collider != null)
+        Vector2[] directions = { Vector2.up, Vector2.down, Vector2.left, Vector2.right };
+        foreach (Vector2 i in directions)
         {
-            float dist = Mathf.Abs(hit.point.y - transform.position.y);
-            LineRenderer lineRenderer = GetComponent<LineRenderer>();
-            Vector3 tar = hit.transform.position;
-            lineRenderer.SetPosition(0, tar);
-            //var t = Time.time;
-            /*for (int i = 0; i < lengthOfLineRenderer; i++)
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, i);
+            if (hit.collider != null && hit.transform.gameObject.name == "base")
             {
-                lineRenderer.SetPosition(i, new Vector3(i * 0.5f, Mathf.Sin(i + t), 0.0f));
-            }*/
-            hit.transform.gameObject.SetActive(true);
+                /*float dist = Mathf.Abs(hit.point.y - transform.position.y);
+                LineRenderer lineRenderer = GetComponent<LineRenderer>();*/
+                Vector3 target = hit.transform.position;
+                //lineRenderer.SetPosition(0, tar);
+                Debug.DrawLine(this.transform.position, target, Color.blue);
+                hit.transform.gameObject.SetActive(true);
+            }
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
