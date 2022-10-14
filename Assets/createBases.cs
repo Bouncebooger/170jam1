@@ -27,8 +27,6 @@ public class createBases : MonoBehaviour
             spawnPosition.x = 0.5f;
             for (int j = 0; j < dim; j++)
             {
-                //spawnPosition.y += 0.5f * i;
-                //spawnPosition.x += 0.5f * i;
                 GameObject newBase = Instantiate(basePrefab, spawnPosition, Quaternion.identity); // create base
                 newBase.GetComponent<baseObj>().playerPosition = playerPlace;
 
@@ -36,9 +34,9 @@ public class createBases : MonoBehaviour
                 {
                     newBase.SetActive(false);
                 }
-                spawnPosition.x += 1;
+                spawnPosition.x += 3;
             }
-            spawnPosition.y += 1;
+            spawnPosition.y += 3;
         }
     }
 
