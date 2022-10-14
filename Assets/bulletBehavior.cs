@@ -42,6 +42,10 @@ public class bulletBehavior : MonoBehaviour
 
             rb.velocity = m_dir * bulletSpeed;
         }
+        if (collision.gameObject.CompareTag("EditorOnly"))
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }
 

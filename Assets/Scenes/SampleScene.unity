@@ -334,7 +334,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330512000}
   m_LocalRotation: {x: 0, y: 0, z: -0.46430114, w: 0.88567746}
-  m_LocalPosition: {x: -2.45, y: -0.36, z: 0}
+  m_LocalPosition: {x: -5.44, y: 3.21, z: 0}
   m_LocalScale: {x: 0.2394309, y: 1.8662508, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -662,7 +662,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b837758c26e8a6343a56cd4988b38da4, type: 3}
   m_Color: {r: 1, g: 0.9994453, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -703,7 +703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rotation: 0.3
-  player_Bullet: {fileID: 5876522546955655485, guid: 3a0f2bff3a0a6a44e888f1a6aca5ac1e, type: 3}
+  player_Bullet: {fileID: 5876522546955655485, guid: cf6892b3e5953e24b8be73101705da02, type: 3}
   attack_Point: {fileID: 928100999}
 --- !u!1 &1914869255
 GameObject:
@@ -1077,7 +1077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8461383279211495548, guid: 689d89b4a811eb249ae534b1d97d2c34, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.8672
+      value: -2.99
       objectReference: {fileID: 0}
     - target: {fileID: 8461383279211495548, guid: 689d89b4a811eb249ae534b1d97d2c34, type: 3}
       propertyPath: m_LocalPosition.y
