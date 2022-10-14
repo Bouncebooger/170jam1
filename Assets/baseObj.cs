@@ -8,6 +8,7 @@ public class baseObj : MonoBehaviour
     public int lengthOfLineRenderer = 20;
     public int interpolationFramesCount = 45; // Number of frames to completely interpolate between the 2 positions
     public GameObject enemPrefab;
+    public Transform playerPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +43,7 @@ public class baseObj : MonoBehaviour
 
     void spawn()
     {
-        Instantiate(enemPrefab, this.gameObject.transform.position, Quaternion.identity);
+        GameObject enemy = Instantiate(enemPrefab, this.gameObject.transform.position, Quaternion.identity);
+        enemy.GetComponent<enemy>().target = playerPosition;
     }
 }

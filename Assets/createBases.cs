@@ -10,7 +10,8 @@ public class createBases : MonoBehaviour
     public float levelWidth = 3f;
     public float minY = .5f;
     public float maxY = .5f;
-    public GameObject playerRef;
+
+    public Transform playerPlace;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,8 @@ public class createBases : MonoBehaviour
                 //spawnPosition.y += 0.5f * i;
                 //spawnPosition.x += 0.5f * i;
                 GameObject newBase = Instantiate(basePrefab, spawnPosition, Quaternion.identity); // create base
+                newBase.GetComponent<baseObj>().playerPosition = playerPlace;
+
                 if (!rand.Contains(i * j + j)) // set other bases to inactive except for first one
                 {
                     newBase.SetActive(false);
