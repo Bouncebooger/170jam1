@@ -28,7 +28,7 @@ public class createBases : MonoBehaviour
             for (int j = 0; j < dim; j++)
             {
                 GameObject newBase = Instantiate(basePrefab, spawnPosition, Quaternion.identity); // create base
-                newBase.GetComponent<baseObj>().playerPosition = playerPlace;
+                //newBase.GetComponent<baseObj>().playerPosition = playerPlace;
 
                 if (!rand.Contains(i * j + j)) // set other bases to inactive except for first one
                 {

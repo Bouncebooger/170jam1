@@ -8,13 +8,12 @@ public class baseObj : MonoBehaviour
     public int lengthOfLineRenderer = 20;
     public int interpolationFramesCount = 45; // Number of frames to completely interpolate between the 2 positions
     public GameObject enemPrefab;
-    public Transform playerPosition;
     // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         float startIn = 1;
-        float every = 5;
+        float every = 8;
         InvokeRepeating("spawn", startIn, every);
     }
 
@@ -24,7 +23,7 @@ public class baseObj : MonoBehaviour
         foreach (Vector2 i in directions)
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, i);
-            if (hit.collider != null && hit.transform.gameObject.name == "base")
+            if (hit.collider != null && hit.transform.gameObject.name == "Base")
             {
                 /*float dist = Mathf.Abs(hit.point.y - transform.position.y);
                 LineRenderer lineRenderer = GetComponent<LineRenderer>();*/
@@ -44,8 +43,6 @@ public class baseObj : MonoBehaviour
     void spawn()
     {
         GameObject enemy = Instantiate(enemPrefab, this.gameObject.transform.position, Quaternion.identity);
-        enemy.GetComponent<enemy>().target = playerPosition;
+        //enemy.GetComponent<enemy>().target = playerPosition;
     }
-
-   
 }
