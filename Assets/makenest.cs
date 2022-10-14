@@ -18,8 +18,9 @@ public class makenest : MonoBehaviour
     }
     void Start()
     {
-        
-    }
+
+        onHello.Raise();
+       }
 
     // Update is called once per frame
     void Update()
