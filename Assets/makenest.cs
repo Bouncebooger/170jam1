@@ -13,7 +13,7 @@ public class makenest : MonoBehaviour
         for (int x = 0; x < 2; x++) {
             Vector3 randnewNest = new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), 0);
             Instantiate(Nest, randnewNest, Quaternion.identity);
-            onHello.Raise();
+            
         }
     }
     void Start()
