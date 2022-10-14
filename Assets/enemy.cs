@@ -15,7 +15,7 @@ public class enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dist = Vector3.Distance(target.position, transform.position);
+        float dist = Vector3.Distance(target.position, transform.position); 
         if (dist <= inRange)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed);
