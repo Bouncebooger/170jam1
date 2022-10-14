@@ -45,6 +45,11 @@ public class bulletBehavior : MonoBehaviour
         if (collision.gameObject.CompareTag("EditorOnly"))
         {
             Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(this.gameObject);
         }
     }
 }

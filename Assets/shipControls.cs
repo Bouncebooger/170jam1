@@ -89,4 +89,12 @@ public class shipControls : MonoBehaviour
     {
 
     }
+
+    void OnCollisionEnter2D(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
