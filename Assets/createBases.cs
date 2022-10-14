@@ -5,10 +5,10 @@ using UnityEngine;
 public class createBases : MonoBehaviour
 {
     // I just realized that makenest does the same thing. my bad.
-    public int numBases = 5;
+    public int numBases = 9;
     public GameObject basePrefab;
     public float levelWidth = 3f;
-    public float minY = .2f;
+    public float minY = .5f;
     public float maxY = .5f;
     // Start is called before the first frame update
     void Start()
@@ -18,16 +18,23 @@ public class createBases : MonoBehaviour
         {
             rand.Add(Random.Range(0, numBases));
         }
-        Vector3 spawnPosition = new Vector3();
-        for (int i = 0; i < numBases; i++)
+        Vector3 spawnPosition = new Vector3(0.5f,0.5f, 0f);
+        int dim = (int)Mathf.Sqrt(numBases);
+        for (int i = 0; i < dim; i++)
         {
-            spawnPosition.y += Random.Range(minY, maxY);
-            spawnPosition.x = Random.Range(-levelWidth, levelWidth);
-            GameObject newBase = Instantiate(basePrefab, spawnPosition, Quaternion.identity); // create base
-            if (!rand.Contains(i)) // set other bases to inactive except for first one
+            spawnPosition.x = 0.5f;
+            for (int j = 0; j < dim; j++)
             {
-                newBase.SetActive(false);
+                //spawnPosition.y += 0.5f * i;
+                //spawnPosition.x += 0.5f * i;
+                GameObject newBase = Instantiate(basePrefab, spawnPosition, Quaternion.identity); // create base
+                if (!rand.Contains(i * j + j)) // set other bases to inactive except for first one
+                {
+                    newBase.SetActive(false);
+                }
+                spawnPosition.x += 1;
             }
+            spawnPosition.y += 1;
         }
     }
 
